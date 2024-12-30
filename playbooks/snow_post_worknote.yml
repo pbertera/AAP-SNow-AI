@@ -1,0 +1,9 @@
+---
+- name: Post an update on the Work Note section of Service Now Incident
+  hosts: localhost
+
+  tasks:
+    - name: Post Work Note on SNOW
+      ansible.builtin.import_tasks: "./tasks/snow_post_worknote_tasks.yml"
+      vars:
+        post_message: "{{ post_message }}"

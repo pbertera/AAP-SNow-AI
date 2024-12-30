@@ -1,0 +1,9 @@
+---
+- name: Setup the machines with a MySQL role
+  hosts: all
+  become: true
+  tasks:
+  - name: Install the latest version of MySQL
+    ansible.builtin.dnf:
+      name: mysql-server
+      state: latest

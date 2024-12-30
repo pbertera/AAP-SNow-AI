@@ -1,0 +1,9 @@
+---
+- name: Setup the machines with an Apache role
+  hosts: all
+  become: true
+  tasks:
+  - name: Install the latest version of Apache
+    ansible.builtin.dnf:
+      name: httpd
+      state: latest
